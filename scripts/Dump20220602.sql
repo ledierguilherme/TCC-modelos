@@ -147,7 +147,7 @@ CREATE TABLE `tblComentarios` (
   KEY `tblEventoIdEvento` (`tblEventoIdEvento`),
   CONSTRAINT `tblcomentarios_ibfk_1` FOREIGN KEY (`tblPerfilIdPerfil`) REFERENCES `tblPerfils` (`idPerfil`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `tblcomentarios_ibfk_2` FOREIGN KEY (`tblEventoIdEvento`) REFERENCES `tblEventos` (`idEvento`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,7 @@ CREATE TABLE `tblComentarios` (
 
 LOCK TABLES `tblComentarios` WRITE;
 /*!40000 ALTER TABLE `tblComentarios` DISABLE KEYS */;
-INSERT INTO `tblComentarios` VALUES (1,'oi','2022-05-31 14:21:20','2022-05-31 14:21:20',2,1),(2,'ISSO VAI SER MANEIRO','2022-06-01 11:37:09','2022-06-01 11:37:09',2,3);
+INSERT INTO `tblComentarios` VALUES (1,'oi','2022-05-31 14:21:20','2022-05-31 14:21:20',2,1),(2,'ISSO VAI SER MANEIRO','2022-06-01 11:37:09','2022-06-01 11:37:09',2,3),(3,'Eu amei esse evento ano passado, fico felix que estejam fazendo de novo','2022-06-02 12:17:28','2022-06-02 12:17:28',2,1),(4,'hehehe','2022-06-02 12:48:59','2022-06-02 12:48:59',2,1);
 /*!40000 ALTER TABLE `tblComentarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,7 +308,7 @@ CREATE TABLE `tblEnderecos` (
   PRIMARY KEY (`idEndereco`),
   KEY `tblUsuarioComumIdUsuarioComum` (`tblUsuarioComumIdUsuarioComum`),
   CONSTRAINT `tblenderecos_ibfk_1` FOREIGN KEY (`tblUsuarioComumIdUsuarioComum`) REFERENCES `tblUsuarioComums` (`idUsuarioComum`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -317,7 +317,7 @@ CREATE TABLE `tblEnderecos` (
 
 LOCK TABLES `tblEnderecos` WRITE;
 /*!40000 ALTER TABLE `tblEnderecos` DISABLE KEYS */;
-INSERT INTO `tblEnderecos` VALUES (1,'70239-080','Brasília','DF','2022-05-31 11:35:59','2022-05-31 11:35:59',1);
+INSERT INTO `tblEnderecos` VALUES (1,'70239-080','Brasília','DF','2022-05-31 11:35:59','2022-05-31 11:35:59',1),(2,'06410210','Barueri','SP','2022-06-02 12:11:40','2022-06-02 12:11:40',2);
 /*!40000 ALTER TABLE `tblEnderecos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -571,7 +571,7 @@ CREATE TABLE `tblLotes` (
   KEY `tblEventoIdEvento` (`tblEventoIdEvento`),
   CONSTRAINT `tbllotes_ibfk_1` FOREIGN KEY (`tblTipoIngressoIdTipoIngresso`) REFERENCES `tblTipoIngressos` (`idTipoIngresso`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `tbllotes_ibfk_2` FOREIGN KEY (`tblEventoIdEvento`) REFERENCES `tblEventos` (`idEvento`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -580,6 +580,7 @@ CREATE TABLE `tblLotes` (
 
 LOCK TABLES `tblLotes` WRITE;
 /*!40000 ALTER TABLE `tblLotes` DISABLE KEYS */;
+INSERT INTO `tblLotes` VALUES (2,150,2,'2022-04-02','2022-06-02','03:00:00','23:59:00',1,'2022-06-02 12:51:48','2022-06-02 12:51:48',1,2);
 /*!40000 ALTER TABLE `tblLotes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -601,7 +602,7 @@ CREATE TABLE `tblPerfils` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`idPerfil`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -610,7 +611,7 @@ CREATE TABLE `tblPerfils` (
 
 LOCK TABLES `tblPerfils` WRITE;
 /*!40000 ALTER TABLE `tblPerfils` DISABLE KEYS */;
-INSERT INTO `tblPerfils` VALUES (1,'Ordinário','ordinario@email.com','1234','uploads/1653996959494camaleao.jpeg','uploads/1653996959507pavao.jpeg','Tudo em cima!','2022-05-31 11:35:59','2022-05-31 11:35:59'),(2,'Entidade','entidade@email.com','1234','uploads/1653997286821panda.png','uploads/1653997286829doninha.jpeg','Somos a Entidade, caso não tenha percebido.','2022-05-31 11:41:26','2022-05-31 11:41:26');
+INSERT INTO `tblPerfils` VALUES (1,'Ordinário','ordinario@email.com','1234','uploads/1653996959494camaleao.jpeg','uploads/1653996959507pavao.jpeg','Tudo em cima!','2022-05-31 11:35:59','2022-05-31 11:35:59'),(2,'Entidade','entidade@email.com','1234','uploads/1653997286821panda.png','uploads/1653997286829doninha.jpeg','Somos a Entidade, caso não tenha percebido.','2022-05-31 11:41:26','2022-05-31 11:41:26'),(3,'RodrAlen','rodrigo.alencor@gmail.com','123',NULL,NULL,'Eu festa, e voce tambem #seAme','2022-06-02 12:11:40','2022-06-02 12:11:40');
 /*!40000 ALTER TABLE `tblPerfils` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -704,7 +705,7 @@ CREATE TABLE `tblTipoIngressos` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`idTipoIngresso`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -713,6 +714,7 @@ CREATE TABLE `tblTipoIngressos` (
 
 LOCK TABLES `tblTipoIngressos` WRITE;
 /*!40000 ALTER TABLE `tblTipoIngressos` DISABLE KEYS */;
+INSERT INTO `tblTipoIngressos` VALUES (1,'Gratuito','2022-06-02 12:51:37','2022-06-02 12:51:37'),(2,'Pago','2022-06-02 12:51:45','2022-06-02 12:51:45');
 /*!40000 ALTER TABLE `tblTipoIngressos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -733,7 +735,7 @@ CREATE TABLE `tblUsuarioComums` (
   PRIMARY KEY (`idUsuarioComum`),
   KEY `tblPerfilIdPerfil` (`tblPerfilIdPerfil`),
   CONSTRAINT `tblusuariocomums_ibfk_1` FOREIGN KEY (`tblPerfilIdPerfil`) REFERENCES `tblPerfils` (`idPerfil`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -742,7 +744,7 @@ CREATE TABLE `tblUsuarioComums` (
 
 LOCK TABLES `tblUsuarioComums` WRITE;
 /*!40000 ALTER TABLE `tblUsuarioComums` DISABLE KEYS */;
-INSERT INTO `tblUsuarioComums` VALUES (1,'Luis Sergio','2001-10-18','2022-05-31 11:35:59','2022-05-31 11:35:59',1);
+INSERT INTO `tblUsuarioComums` VALUES (1,'Luis Sergio','2001-10-18','2022-05-31 11:35:59','2022-05-31 11:35:59',1),(2,'Rodrigo Alencor','2022-06-15','2022-06-02 12:11:40','2022-06-02 12:11:40',3);
 /*!40000 ALTER TABLE `tblUsuarioComums` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -765,7 +767,7 @@ CREATE TABLE `tblVariedadeIngressoLotes` (
   PRIMARY KEY (`idVariedadeIngressoLote`),
   KEY `tblLoteIdLote` (`tblLoteIdLote`),
   CONSTRAINT `tblvariedadeingressolotes_ibfk_1` FOREIGN KEY (`tblLoteIdLote`) REFERENCES `tblLotes` (`idLote`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -774,6 +776,7 @@ CREATE TABLE `tblVariedadeIngressoLotes` (
 
 LOCK TABLES `tblVariedadeIngressoLotes` WRITE;
 /*!40000 ALTER TABLE `tblVariedadeIngressoLotes` DISABLE KEYS */;
+INSERT INTO `tblVariedadeIngressoLotes` VALUES (2,320,'Esse ingresso dá direito a um tapa na cara','InfraIngressos',759.99,'2022-06-02 12:52:29','2022-06-02 12:52:29',2);
 /*!40000 ALTER TABLE `tblVariedadeIngressoLotes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -803,7 +806,7 @@ CREATE TABLE `tblVerificacaoUsuarios` (
 
 --
 -- Dumping data for table `tblVerificacaoUsuarios`
--- 
+--
 
 LOCK TABLES `tblVerificacaoUsuarios` WRITE;
 /*!40000 ALTER TABLE `tblVerificacaoUsuarios` DISABLE KEYS */;
@@ -819,4 +822,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-01  8:39:50
+-- Dump completed on 2022-06-02 11:27:14
